@@ -1,11 +1,34 @@
 import config from "@config/config.json";
 import { markdownify } from "@lib/utils/textConverter";
+import { useForm, ValidationError } from "@formspree/react";
+import { useEffect, useState } from "react";
 
 const Contact = ({ data }) => {
   const { frontmatter } = data;
   const { title, info } = frontmatter;
-  const { contact_form_action } = config.params;
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
+  const [state, handleSubmit] = useForm("xjvqdlpz");
+
+  useEffect(() => {
+    if (state.succeeded) {
+      // Set form as submitted
+      setFormSubmitted(true);
+      // Timer to reset the form submission state
+      const timer = setTimeout(() => {
+        setFormSubmitted(false);
+      }, 5000); // 5 seconds
+      return () => clearTimeout(timer);
+    }
+  }, [state.succeeded]);
+
+  if (formSubmitted) {
+    return (
+      <div className="mt-4 rounded border border-gray-300 bg-gray-100 p-4 text-center">
+        Thanks for your submission!
+      </div>
+    );
+  }
   return (
     <section className="section">
       <div className="container">
@@ -13,13 +36,17 @@ const Contact = ({ data }) => {
         <div className="section row pb-0">
           <div className="col-12 md:col-6 lg:col-7">
             <form
-              className="contact-form"
+              onSubmit={handleSubmit}
+              action="https://formspree.io/f/xjvqdlpz"
+              className={`contact-form ${
+                formSubmitted ? "invisible opacity-0" : "opacity-100"
+              }`}
               method="POST"
-              action={contact_form_action}
             >
               <div className="mb-3">
                 <input
                   className="form-input w-full rounded"
+                  id="name"
                   name="name"
                   type="text"
                   placeholder="Name"
@@ -30,28 +57,31 @@ const Contact = ({ data }) => {
                 <input
                   className="form-input w-full rounded"
                   name="email"
+                  id="email"
                   type="email"
                   placeholder="Your email"
                   required
                 />
               </div>
               <div className="mb-3">
-                <input
-                  className="form-input w-full rounded"
-                  name="subject"
-                  type="text"
-                  placeholder="Subject"
-                  required
-                />
-              </div>
-              <div className="mb-3">
                 <textarea
+                  id="message"
+                  name="message"
                   className="form-textarea w-full rounded-md"
                   rows="7"
                   placeholder="Your message"
                 />
               </div>
-              <button type="submit" className="btn btn-primary">
+              <ValidationError
+                prefix="Message"
+                field="message"
+                errors={state.errors}
+              />
+              <button
+                type="submit"
+                className="btn btn-primary"
+                disabled={state.submitting}
+              >
                 Send Now
               </button>
             </form>
