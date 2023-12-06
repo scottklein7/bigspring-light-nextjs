@@ -11,22 +11,22 @@ banner:
 feature:
   title: Something You Need To Know
   features:
-    - name: "Clean Code"
+    - name: " Cutting Edge LLM Models"
       icon: "/images/code.svg"
       content: "Our systems are built using the best models best suited to your needs"
-    - name: "Object Oriented"
+    - name: "Powerful Vector Databases"
       icon: "/images/oop.svg"
       content: "Rapidly locate and interpret large scale text-based data using Pinecone"
-    - name: "24h Service"
+    - name: "Professional Services"
       icon: "/images/user-clock.svg"
       content: "We offer basic service level agreements, ongoing development services and technical training"
-    - name: "Value for Money"
+    - name: "Save Time and Money"
       icon: "/images/love.svg"
       content: "Our AI solutions add incredible efficiency and time savings to your day-to-day operations"
-    - name: "Faster Response"
+    - name: "Analytics"
       icon: "/images/speedometer.svg"
       content: "Learn more about your users, capture sales leads and valuable insights to drive business decisions"
-    - name: "Cloud Support"
+    - name: "Cloud Hosting"
       icon: "/images/cloud.svg"
       content: "Data can be stored on any cloud provider of your choosing"
 
