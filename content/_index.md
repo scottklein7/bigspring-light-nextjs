@@ -1,8 +1,8 @@
 ---
 banner:
-  title: Let us solve your critical AI development challenges
-  content: Empower your business with cutting-edge AI solutions tailored to your unique needs.
-  image: /images/aifrontpage.png
+  title: Bringing Artificial Intelligence Solutions to Every Day Businesses
+  content: Unlocking AI Potential for a New Era
+  image: /images/mainimg.png
   button:
     label: "Contact Us"
     link: "/contact"
@@ -13,22 +13,22 @@ feature:
   features:
     - name: "Clean Code"
       icon: "/images/code.svg"
-      content: "Our AI solutions are built with precision and maintainability in mind"
+      content: "Our systems are built using the best models best suited to your needs"
     - name: "Object Oriented"
       icon: "/images/oop.svg"
-      content: "We leverage object-oriented programming to create modular and scalable AI systems"
+      content: "Rapidly locate and interpret large scale text-based data using Pinecone"
     - name: "24h Service"
       icon: "/images/user-clock.svg"
-      content: "We provide round-the-clock support to ensure your AI systems are always performing optimally."
+      content: "We offer basic service level agreements, ongoing development services and technical training"
     - name: "Value for Money"
       icon: "/images/love.svg"
-      content: "Investing in AI with us guarantees you not only cutting-edge innovation but also cost-effective solutions"
+      content: "Our AI solutions add incredible efficiency and time savings to your day-to-day operations"
     - name: "Faster Response"
       icon: "/images/speedometer.svg"
-      content: "Giving your business a competitive edge with faster more informed responses"
+      content: "Learn more about your users, capture sales leads and valuable insights to drive business decisions"
     - name: "Cloud Support"
       icon: "/images/cloud.svg"
-      content: "Our AI agency provides robust cloud support for scalable computing power and data storage"
+      content: "Data can be stored on any cloud provider of your choosing"
 
 # workflow
 workflow:
